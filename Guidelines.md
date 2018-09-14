@@ -71,7 +71,7 @@ Accept | Optional | image/jpeg | Muestra la ultima imagen del último loader
 }
 ```
 
-##Request
+## Request
 
 ```
 POST /loader HTTP/1.1
@@ -124,7 +124,7 @@ Postman-Token: 7d2eadce-d668-4dc7-88d9-879eef04056f
 }
 ```
 
-##Response
+## Response
 
 ```
 Content-Length: 13772
