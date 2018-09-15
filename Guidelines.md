@@ -1,6 +1,3 @@
-Auth
-============
-
 # Auth
 
 **Request**
@@ -12,14 +9,14 @@ POST | /api/auth | Autenticación de Usuario
 **Headers**
 
 Name | Required | Value | Description
----- | -------- | -------- | --------
+---- | -------- | ----- | --------
 Content-Type | Required | application/json | Sen data with json
 Accept | Optional | image/jpeg | Muestra la ultima imagen del último loader
 
 **Params**
 
  Name | Type | Required | Description
-------- | ----------- | ------------
+---- | ----- | -------- | ------------
 user | string | Required | Nombre de usuario
 pass | string | Required | Password del usuario
 
@@ -29,10 +26,10 @@ No body
 
 **Response**
 
- Status | Message
-------- | ----------- | ------------
-201 | string | Successfully added queue
-409 | string | Required | Password del usuario
+Code | Status | Message
+---- | ------ | -------
+200 | OK | Successfully auth user
+400 | BAD REQUEST | User does not exist
 
 ```
 {
@@ -64,9 +61,9 @@ No body
 
 **Response**
 
- Code | Status | Message
-------- | ----------- | ------------
-200 | OK | Successfully added queue
+Code | Status | Message
+---- | ------ | -------
+200 | OK | Successfully get token
 400 | BAD REQUEST | Authorization Required
 
 ```
