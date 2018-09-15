@@ -52,8 +52,8 @@ No headers
 **Params**
 
  Name | Type | Required | Description
-------- | ----------- | ------------
-authcode | string | Required | Ej. hash session del usuario Ej. ae81aad5-0b00-4fc0-b6f7-3a582db02315
+---- | ----- | -------- | ------------
+authcode | string | Required | Hash session del usuario
 
 **Body**
 
