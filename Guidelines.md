@@ -8,10 +8,7 @@ POST | /api/auth | Autenticación de Usuario
 
 **Headers**
 
-Name | Required | Value | Description
----- | -------- | ----- | --------
-Content-Type | Required | application/json | Sen data with json
-Accept | Optional | image/jpeg | Muestra la ultima imagen del último loader
+No headers
 
 **Params**
 
