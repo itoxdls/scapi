@@ -1,7 +1,62 @@
 # ScraperCloud.com REST API Guidelines
 
 * Scapi
+  * Crawl
+    * [Scheduler task manager](#scheduler-task-manager) 
   * [Loader Api Rest](#loader-api-rest)
+
+Scheduler task manager
+======================
+
+# Eliminar un proceso scan del segundo plano
+
+**Request**
+
+ Method | Request URI | Description
+------- | ----------- | ------------
+DELETE | /api/scheduler_task_manager/&lt;scheduler-id&gt; | Elimina una tarea programada
+
+**Headers**
+
+ Method | Type | Description
+------- | ----------- | ------------
+Authorization | string | token
+
+**Test token**
+```
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
+```
+
+ Status | Message | Description
+------- | ----------- | -----------
+201     | OK          | Successfully remove scheduler task
+400     | BAD REQUEST | No job by the id of <scheduler-id> was found
+
+**Request**
+
+```
+DELETE /api/scheduler_task_manager/myscheduler HTTP/1.1
+Host: 127.0.0.1:5231
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
+Cache-Control: no-cache
+```
+
+**Response**
+
+```
+accept: application/json
+access-control-allow-headers: X-HTTP-Method-Override, Content-Type, Authorization
+access-control-allow-methods: GET,PUT,POST,DELETE
+access-control-allow-origin: *
+content-length: 56
+content-type: application/json; charset=UTF-8
+date: Wed, 22 Aug 2018 01:26:20 GMT
+server: Werkzeug/0.13 Python/3.6.5
+
+{
+    "message": "Successfully remove scheduler task"
+}
+```
 
 # Loader Api Rest
 # Loads multiple api rest
