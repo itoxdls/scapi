@@ -68,3 +68,36 @@ Code | Status | Message
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Njg1MjA2NDIsImlhdCI6MTUzNjk4NDY0Miwic3ViIjoiMjc3M2M0NTEtZDgwOS00NzQ1LWEzYmQtODdlYjUyMDk0ZTk5In0.LJN2uKJT8REBeH8WhljJAM3JGCiklXJS29Htn5SZP4A"
 }
 ```
+**Php example**
+
+```php
+$request = new HttpRequest();
+$request->setUrl('/api/auth');
+$request->setMethod(HTTP_METH_POST);
+
+$request->setQueryData(array(
+  'user' => 'user',
+  'pass' => 'pass'
+));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+
+**Python example**
+
+```python
+import requests
+
+response = requests.request("POST", "/api/auth", params={
+    "user":"user",
+    "pass":"pass"
+})
+
+print(response.text)
+```
