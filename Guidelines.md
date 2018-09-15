@@ -19,7 +19,7 @@ Task manager
 
  Method | Request URI | Description
 ------- | ----------- | ------------
-POST | /api/task_manager/queue/<queue-id> | Agrego una nueva cola al usuario
+POST | /api/task/queue/<queue-id> | Agrego una nueva cola al usuario
 
 **Headers**
 
@@ -46,7 +46,7 @@ No body
 **Request**
 
 ```
-POST /api/task_manager/queue/my-queue HTTP/1.1
+POST /api/task/queue/my-queue HTTP/1.1
 Host: 127.0.0.1:5231
 Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
 Cache-Control: no-cache
@@ -76,7 +76,7 @@ server: Werkzeug/0.13 Python/3.6.5
 
  Method | Request URI | Description
 ------- | ----------- | ------------
-POST | /api/task_manager/queue/<queue-id>/<task-id> | Agrego una nueva tarea a la cola especificada del usuario
+POST | /api/task/queue/<queue-id>/<task-id> | Agrego una nueva tarea a la cola especificada del usuario
 
 **Headers**
 
@@ -118,7 +118,7 @@ priority | int | Between 1 and 9 - Optional - Default 1
 **Request**
 
 ```
-POST /api/task_manager/queue/queue_id-1/mytask?priority=1 HTTP/1.1
+POST /api/task/queue/queue_id-1/mytask?priority=1 HTTP/1.1
 Host: 127.0.0.1:5231
 Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
 Content-Type: application/json
@@ -178,7 +178,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDg
 **Request**
 
 ```
-GET /api/task_manager HTTP/1.1
+GET /api/task HTTP/1.1
 Host: 127.0.0.1:5231
 Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
 Cache-Control: no-cache
@@ -229,7 +229,7 @@ server: Werkzeug/0.13 Python/3.6.5
 
  Method | Request URI | Description
 ------- | ----------- | ------------
-GET     | /api/task_manager/queue/<queue-id> | Obtengo todas las tareas de una cola
+GET     | /api/task/queue/<queue-id> | Obtengo todas las tareas de una cola
 
 **Headers**
 
@@ -250,7 +250,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDg
 **Request**
 
 ```
-GET /api/task_manager/queue/queue_id-1 HTTP/1.1
+GET /api/task/queue/queue_id-1 HTTP/1.1
 Host: 127.0.0.1:5231
 Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
 Cache-Control: no-cache
@@ -322,7 +322,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDg
 **Request**
 
 ```
-DELETE /api/scheduler_task_manager/myscheduler HTTP/1.1
+DELETE /api/scheduler/myscheduler HTTP/1.1
 Host: 127.0.0.1:5231
 Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjMwNzY4MzgsImlhdCI6MTUzMTU0MDgzOCwic3ViIjoiNTZjZmJmYjEtMmJkNC00YTE5LTg2MjQtNzQ2Y2I2MzhiNDg4In0.CNDHxP4gpo2FeHn3Fm-JABOorefcf6syW7qeqBR6AOA
 Cache-Control: no-cache
@@ -426,7 +426,7 @@ Postman-Token: 7d2eadce-d668-4dc7-88d9-879eef04056f
 {
     "loaders":[
         {
-        	"url": "http://127.0.0.1:5000/join",
+            "url": "/join",
             "method": "post",
             "data":{
 				"files":[
@@ -445,7 +445,7 @@ Postman-Token: 7d2eadce-d668-4dc7-88d9-879eef04056f
 			}
         },
         {
-        	"url": "http://127.0.0.1:5000/optimize",
+        	"url": "/optimize",
             "method": "post",
             "params": {
 		        "quality":60,
@@ -455,7 +455,7 @@ Postman-Token: 7d2eadce-d668-4dc7-88d9-879eef04056f
             }
         },
         {
-        	"url": "http://127.0.0.1:5000/resize",
+        	"url": "/resize",
             "method": "post",
             "params": {
             	"width":300,
