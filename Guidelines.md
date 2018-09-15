@@ -1,3 +1,5 @@
+# ScraperCloud.com REST API Guidelines
+
 # Auth
 
 **Request**
