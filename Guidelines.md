@@ -1,4 +1,4 @@
-AAuth
+Auth
 ============
 
 # Auth
