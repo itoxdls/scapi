@@ -105,8 +105,6 @@ Code | Status | Message
 **Php example**
 
 ```php
-<?php
-
 $request = new HttpRequest();
 $request->setUrl('/api/auth/token');
 $request->setMethod(HTTP_METH_POST);
